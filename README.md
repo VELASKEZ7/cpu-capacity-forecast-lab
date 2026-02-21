@@ -4,10 +4,12 @@ Predice demanda de CPU para la siguiente ventana operativa.
 
 ## Que hace
 - Lee historico en `data/cpu_history.csv`
-- Ajusta regresion lineal simple
+- Compara modelos: regresion lineal vs moving average
 - Pronostica 24 puntos futuros
-- Calcula MAPE contra muestra de validacion
+- Selecciona automaticamente el modelo con menor MAPE
+- Calcula recomendacion de capacidad (vCPU)
 - Genera recomendacion de capacidad en `out/forecast_report.json`
+- Exporta tambien `out/forecast.csv` y `out/forecast_report.md`
 
 ## Ejecutar
 ```powershell
