@@ -1,22 +1,22 @@
-﻿# CPU Capacity Forecast Lab
+# CPU Capacity Forecast Lab
 
-## Objetivo
-Estimar demanda futura de CPU para planificar capacidad.
+Predice demanda de CPU para la siguiente ventana operativa.
 
-## Stack
-Python, Pandas, Scikit-learn
+## Que hace
+- Lee historico en `data/cpu_history.csv`
+- Ajusta regresion lineal simple
+- Pronostica 24 puntos futuros
+- Calcula MAPE contra muestra de validacion
+- Genera recomendacion de capacidad en `out/forecast_report.json`
 
-## Arquitectura
-Metricas historicas -> ETL -> Modelo -> Dashboard -> Recomendacion
+## Ejecutar
+```powershell
+cd C:\Users\Administrator\portfolio-redes-projects\cpu-capacity-forecast-lab
+powershell -ExecutionPolicy Bypass -File .\scripts\main.ps1
+```
 
-## KPI esperado
-Error < 15% semanal
-
-## Estructura sugerida
-- docs/ diagramas y decisiones tecnicas
-- scripts/ automatizaciones
-- src/ codigo principal
-- 	ests/ pruebas basicas
-
-## Proximos pasos
-Comparar modelos y publicar API de prediccion.
+## Probar
+```powershell
+cd C:\Users\Administrator\portfolio-redes-projects\cpu-capacity-forecast-lab
+python -m unittest tests\test_cpu_forecast.py -v
+```
